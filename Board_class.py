@@ -7,6 +7,7 @@ class Board:
         self.width = width
         self.height = height
         self.board = [[0] * height for _ in range(width)]
+        self.board[0][0] = 1
         # значения по умолчанию
         self.left = 20
         self.top = 50
@@ -30,9 +31,9 @@ class Board:
 
     def get_cell(self, mouse_pos):
         pos = ((mouse_pos[0] - self.left) // self.cell_size, (mouse_pos[1] - self.top) // self.cell_size)
-        if pos[0] <= self.width - 1 and pos[1] <= self.height - 1:
+        if (0 <= pos[0] <= self.width - 1) and (0 <= pos[1] <= self.height - 1):
             return pos
-        return (-1, -1)
+        return (0, 0)
 
     def get_click(self, mouse_pos):
         cell = self.get_cell(mouse_pos)
