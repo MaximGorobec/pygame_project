@@ -1,17 +1,18 @@
 import pygame
 from pygame import Color
+from random import  randint
 class Board:
     # создание поля
     def __init__(self, width, height):
         self.player_speed = 1
         self.width = width
         self.height = height
-        self.board = [[0] * height for _ in range(width)]
+        self.board = [[1] * height for _ in range(width)]
         self.board[0][0] = 1
         # значения по умолчанию
         self.left = 20
         self.top = 50
-        self.cell_size = 30
+        self.cell_size = 1
 
     # настройка внешнего вида
     def set_view(self, left, top, cell_size):
@@ -26,7 +27,7 @@ class Board:
                     r = 90
                 else:
                     r = 1
-                pygame.draw.rect(screen, Color('white'), (x * self.cell_size + self.left, y * self.cell_size + self.top, self.cell_size, self.cell_size), r)
+                pygame.draw.rect(screen, Color((randint(0, 255), randint(0,255), randint(0, 255))), (x * self.cell_size + self.left, y * self.cell_size + self.top, self.cell_size, self.cell_size), r)
         pygame.draw.circle(screen, Color('green'), (screen.get_width() // 2, screen.get_height() // 2), 30)
 
     def get_cell(self, mouse_pos):

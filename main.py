@@ -7,7 +7,7 @@ if __name__ == '__main__':
     pygame.display.set_caption('Движущийся круг 2')
     size = width, height = 1024, 800
     screen = pygame.display.set_mode(size)
-    board = Board(20, 20)
+    board = Board(200, 200)
     running = True
     w_key = False
     keys = dict()
