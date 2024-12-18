@@ -11,7 +11,7 @@ class Board:
         # значения по умолчанию
         self.left = 20
         self.top = 50
-        self.cell_size = 30
+        self.cell_size = 200
 
     # настройка внешнего вида
     def set_view(self, left, top, cell_size):
@@ -23,7 +23,7 @@ class Board:
         for y in range(self.height):
             for x in range(self.width):
                 if self.board[x][y] == 1:
-                    r = 90
+                    r = self.cell_size
                 else:
                     r = 1
                 pygame.draw.rect(screen, Color('white'), (x * self.cell_size + self.left, y * self.cell_size + self.top, self.cell_size, self.cell_size), r)
