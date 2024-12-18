@@ -1,4 +1,4 @@
-from Entity import Entity
+from Entity_class import Entity
 class Player(Entity):
     pass
 

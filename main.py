@@ -1,5 +1,5 @@
 import pygame
-from board import Board
+from Board_class import Board
 from pygame import Color
 if __name__ == '__main__':
     player_r = 30
