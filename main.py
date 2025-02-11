@@ -3,7 +3,7 @@ from Board_class import Board
 from pygame import Color
 if __name__ == '__main__':
     player_r = 30
-    player_speed = 20
+    player_speed = 10
     pygame.init()
     pygame.display.set_caption('rogueunlike')
     size = width, height = 1024, 800
